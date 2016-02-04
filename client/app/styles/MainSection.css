@@ -1,0 +1,8 @@
+@import './_variables.css';
+
+.MainSection{
+
+  border-style: solid;
+  border-color: $primary-color;
+
+}

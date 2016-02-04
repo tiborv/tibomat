@@ -1,0 +1,10 @@
+{
+  "extends": "webkom/react",
+  "parser": "babel-eslint",
+  "globals": {
+    "log": true
+  },
+  "env": {
+    "mocha": true
+  }
+}

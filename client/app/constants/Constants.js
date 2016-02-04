@@ -1,0 +1,13 @@
+export const QuestionConstants = {
+  FETCH_ALL_BEGIN: 'Question.FETCH_ALL_BEGIN',
+  FETCH_ALL_SUCCESS: 'Question.FETCH_ALL_SUCCESS',
+  FETCH_ALL_FAILURE: 'Question.FETCH_ALL_FAILURE',
+  SUBMIT_BEGIN: 'Question.SUBMIT_BEGIN',
+  SUBMIT_SUCCESS: 'Question.SUBMIT_SUCCESS'
+};
+
+export const PartyConstants = {
+  FETCH_ALL_BEGIN: 'Party.FETCH_ALL_BEGIN',
+  FETCH_ALL_SUCCESS: 'Party.FETCH_ALL_SUCCESS',
+  FETCH_ALL_FAILURE: 'Party.FETCH_ALL_FAILURE'
+};
