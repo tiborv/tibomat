@@ -15,15 +15,8 @@ func api(r *gin.RouterGroup) {
 }
 
 func answerAPI(api *gin.RouterGroup) {
-	api.POST("/answer", func(c *gin.Context) {
-
-		var ua models.UserAnswer
-		err := c.BindJSON(&ua)
-		if err != nil {
-			panic(err)
-		}
-		answers := models.RetreiveAllAnswers(ua)
-		c.JSON(http.StatusOK, ua.GetScores(answers))
+	api.GET("/answer", func(c *gin.Context) {
+		c.JSON(http.StatusOK, models.RetreiveAllAnswers(c.Query("question")))
 	})
 }
 

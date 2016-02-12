@@ -40,6 +40,6 @@ export default class AreaQuestion extends Component {
           onClick={this._onSubmit}
         />
       </div>
-    )
+    );
   }
 }

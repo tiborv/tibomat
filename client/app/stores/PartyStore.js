@@ -31,9 +31,10 @@ class PartyStore extends EventEmitter {
       .sort((a, b) => b.score - a.score);
   }
 
-  updatePartyStats(scores) {
-    scores.map(s => {
-      allParties[s.party].score += s.score;
+  updatePartyStats(data) {
+    console.log(allParties);
+    data.answers.map(a => {
+      allParties[a.party].score += (4 - Math.abs(a.value - data.value)) * data.weight;
     });
   }
 
@@ -46,7 +47,7 @@ class PartyStore extends EventEmitter {
         }, {});
         this.emitChange();
         break;
-      case (QuestionConstants.SUBMIT_SUCCESS):
+      case (QuestionConstants.ANSWER_SUCCESS):
         this.updatePartyStats(action.data);
         this.emitChange();
         break;

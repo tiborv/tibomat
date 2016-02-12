@@ -22,19 +22,9 @@ func (p Party) Create() Party {
 	return p
 }
 
-func RetreiveParty(partyId bson.ObjectId) Party {
-	var result Party
-	err := parties.Find(bson.M{"_id": partyId}).One(&result)
-
-	if err != nil {
-		panic(err)
-	}
-	return result
-}
-
 func RetreiveAllParties() []Party {
 	var results []Party
-	err := parties.Find(bson.M{}).All(&results)
+	err := parties.Find(nil).All(&results)
 	if err != nil {
 		panic(err)
 	}

@@ -14,8 +14,8 @@ export function getQuestions(area) {
     .promise();
 }
 
-export function submitAnswer(answer) {
-  return agent.post(ANSWER_API)
-    .send(answer)
+export function getAnswers(question) {
+  return agent.get(ANSWER_API)
+    .query({ question })
     .promise();
 }

@@ -1,13 +1,19 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import { QuestionConstants } from '../constants/Constants';
-import { getQuestions, submitAnswer } from '../utils/Api';
+import { getQuestions, getAnswers } from '../utils/Api';
 
 export default class QuestionActions {
-  static submitAnswer(answer) {
-    AppDispatcher.dispatch({ type: QuestionConstants.SUBMIT_BEGIN });
-    submitAnswer(answer).then(result => {
+  static answer(answer) {
+    AppDispatcher.dispatch({ type: QuestionConstants.ANSWER_BEGIN });
+    getAnswers(answer.question).then(result => {
       AppDispatcher
-        .dispatch({ type: QuestionConstants.SUBMIT_SUCCESS, data: result.body });
+        .dispatch({ type: QuestionConstants.ANSWER_SUCCESS,
+          data: {
+            answers: result.body,
+            value: answer.value,
+            weight: answer.weight
+          }
+        });
     });
   }
 

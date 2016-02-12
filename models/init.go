@@ -34,7 +34,7 @@ func InitDbData() {
 	fmt.Println("Creating initial db data...")
 
 	q1 := Question{Title: "Trondheim", Body: "Rosenborg vinner tippeligaen i 2045", Area: "trondheim"}.Create()
-	q2 := Question{Title: "Oslo", Body: "Tøyen burger og kebab lager god mat", Area: "oslo"}.Create()
+	q2 := Question{Title: "Oslo", Body: "Tøyen burger e digg", Area: "oslo"}.Create()
 	q3 := Question{Title: "Bergen", Body: "Fisk smaker godt alltid", Area: "bergen"}.Create()
 	q4 := Question{Title: "Julenissen", Body: "Julenissen bor i Russland"}.Create()
 	q5 := Question{Title: "Bromstad", Body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}.Create()

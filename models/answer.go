@@ -24,20 +24,9 @@ func (a Answer) Create() Answer {
 	return a
 }
 
-func RetreiveAnswer(name string) Answer {
-	var result Answer
-	err := answers.Find(bson.M{"name": name}).One(&result)
-
-	if err != nil {
-		panic(err)
-	}
-	return result
-}
-
-//bson.ObjectIdHex()
-func RetreiveAllAnswers(ua UserAnswer) []Answer {
+func RetreiveAllAnswers(question string) []Answer {
 	var results []Answer
-	err := answers.Find(bson.M{"question": bson.ObjectIdHex(ua.QuestionID)}).All(&results)
+	err := answers.Find(bson.M{"question": bson.ObjectIdHex(question)}).All(&results)
 	if err != nil {
 		panic(err)
 	}

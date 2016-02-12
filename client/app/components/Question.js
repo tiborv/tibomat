@@ -24,7 +24,7 @@ export default class Question extends Component {
   _submitAnswer = e => {
     if (this.state.value === -1) return;
     checkedButton.checked = false;
-    QuestionActions.submitAnswer({
+    QuestionActions.answer({
       question: this.props.question.ID,
       value: this.state.value,
       weight: e.target.getAttribute('data-weight')
@@ -45,7 +45,7 @@ export default class Question extends Component {
           <li key={i}>
             <input type='radio'
               onChange={this._selectAnswer}
-              data-value={i + 1}
+              data-value={i}
               name='alternative'
               id={`alternative${i}`}
             />
@@ -71,7 +71,7 @@ export default class Question extends Component {
         <input onClick={this._submitAnswer}
           data-weight='1.25'
           type='button'
-          className='large-4 columns button primary'
+          className='large-4 columns button primary end'
           defaultValue='Veldig viktig'
         />
         </div>

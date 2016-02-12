@@ -24,16 +24,6 @@ func (q Question) Create() Question {
 	return q
 }
 
-func RetreiveQuestion(name string) Question {
-	var result Question
-	err := questions.Find(bson.M{"name": name}).One(&result)
-
-	if err != nil {
-		panic(err)
-	}
-	return result
-}
-
 func RetreiveAllQuestions(includeArea string) []Question {
 	var results []Question
 	err := questions.Find(bson.M{"$or": []interface{}{

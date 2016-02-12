@@ -32,12 +32,12 @@ class QuestionStore extends EventEmitter {
   }
 
   lastQuestion() {
-    return allQuestions.length === currentQuestion
+    return allQuestions.length === currentQuestion;
   }
 
   dispatcherCallback = action => {
     switch (action.type) {
-      case (QuestionConstants.SUBMIT_SUCCESS):
+      case (QuestionConstants.ANSWER_SUCCESS):
         currentQuestion++;
         this.emitChange();
         break;
